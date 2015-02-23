@@ -7,6 +7,9 @@
 </p>
 
 <p> <%= @article.body %> </p>
+
+<p> <%= image_tag @article.image.url(:medium) if @article.image.exists? %> </p>
+
 <%= render partial: 'comments/form' %>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
